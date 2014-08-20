@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-header('Content-Type: application/json');
+// header('Content-Type: application/json');
 require_once 'psql.php';
 require_once 'query.php';
 
@@ -19,9 +19,15 @@ $psql = new Psql();
 $psql->setQueryList($queryList);
 $psql->setQuery('ordenes', array());
 
-$queryParam = array('%nu_final%' => $nu_final, '%fecha%' => $fecha);
+// $queryParam = array('%nu_final%' => $nu_final, '%fecha%' => $fecha);
 
-$psql->setQuery('ordenes', $queryParam);
+// $psql->setQuery('ordenes', $queryParam);
+
+echo $psql->executeQuery();
+
+echo '<hr>';
+
+$psql->setQuery('asignadas', array());
 
 echo $psql->executeQuery();
 

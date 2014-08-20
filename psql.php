@@ -21,13 +21,13 @@ class Psql
 
     public function psqlConnection()
     {
-        return odbc_connect($this->getDsn(), "", "") or die(odbc_error());
+        $conn_LA = odbc_connect($this->getDsn(), "", "") or die(odbc_error());
+        return $conn_LA;
     }
 
     public function executeQuery()
     {
-        // $conn_LA = $this->psqlConnection();
-        $conn_LA = odbc_connect($this->getDSN(), "", "") or die(odbc_error());
+        $conn_LA = $this->psqlConnection();
 
         $strSQL  = $this->getSQL();
 

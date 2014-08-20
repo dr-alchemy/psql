@@ -18,7 +18,10 @@
 
 $queryList = array();
 
-$queryList['ordenes'] = 'SELECT Finales.nm_cliente, Dordenes.mt_dolar FROM CLIENTE.Finales, Ultracli.Dordenes WHERE Finales.nu_final = Dordenes.nu_final';
+$queryList['ordenes'] = 'SELECT finales.nm_cliente, dordenes.mt_dolar FROM CLIENTE.finales, Ultracli.dordenes WHERE finales.nu_final = dordenes.nu_final';
+
+$queryList['asignadas'] = 'SELECT * FROM Ultracli.dasigna';
+
 $queryList['ordenes_cliente'] = 'SELECT Finales.nm_cliente, Dordenes.mt_dolar FROM CLIENTE.Finales, Ultracli.Dordenes WHERE Finales.nu_final = Dordenes.nu_final 
 AND Finales.nu_final=%nu_final% AND fecha_valor=%fecha%';
 
